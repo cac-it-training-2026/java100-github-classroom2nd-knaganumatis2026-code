@@ -58,7 +58,7 @@ import java.util.Arrays;
 //ここに次の条件を満たすクラスを作成してください。
 //クラス名：ClearRobot
 //メソッド名：clearTable(引数int[] ingredients
-//戻り値void、渡された配列を0でクリアする)
+//戻り値void、渡された配列を0でクリアする)hhhhh
 class Robot {
 	int energy;
 	int water;
