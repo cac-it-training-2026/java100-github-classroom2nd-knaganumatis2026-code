@@ -65,11 +65,15 @@ class Spaceship {
 
 	//ここに適切な処理を記述する。
 	int consumingFuel(int fuel) {
-		return lightYears = this.fuel - (fuel * 10);
+		int lightYears = fuel * 10;
+		this.fuel -= fuel;
+		return lightYears;
 	}
 
 	int consumingFuel() {
-
+		int lightYears = (fuel / 2) * 10;
+		fuel = fuel / 2;
+		return lightYears;
 	}
 
 }
@@ -91,12 +95,15 @@ public class Astronaut {
 		spaceship.setAir(air);
 
 		//ここでフィールドのfuelに値を設定する。
+		spaceship.setFuel(fuel);
 
 		System.out.println("\n" + spaceship.getAir() + "リットルの空気が入りました。");
 
 		System.out.println("自動で航行します。");
 
 		//ここに適切な処理を記述する。
+		int lightYears = spaceship.consumingFuel();
+		System.out.println("航行距離：" + lightYears + "光年\n");
 
 		System.out.println("燃料で航行します。");
 		System.out.print("使用燃料を入力してください＞");
@@ -104,6 +111,8 @@ public class Astronaut {
 		int consumingFuel = Integer.parseInt(consumingFuelStr);
 
 		//ここに適切な処理を記述する。
+		lightYears = spaceship.consumingFuel(consumingFuel);
+		System.out.println("航行距離：" + lightYears + "光年\n");
 
 	}
 
