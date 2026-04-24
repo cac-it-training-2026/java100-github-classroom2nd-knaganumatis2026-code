@@ -63,11 +63,18 @@ public class Detective {
 		String heightStr = br.readLine();
 		System.out.print("体重をここに入力＞");
 		String weightStr = br.readLine();
-		int height = Integer.parseInt(heightStr);
-		int weight = Integer.parseInt(weightStr);
+		int h = Integer.parseInt(heightStr);
+		int w = Integer.parseInt(weightStr);
 
 		//ここに記述
 
+		if ((h == 190 && w == 100) || (h == 170 && w == 65) || (h == 186 && w == 79) || (h == 192 && w == 70)) {
+			System.out.println("探偵：\r\n"
+					+ "  その方は犯人である可能性がありますね。");
+		} else {
+			System.out.println(" 探偵：\r\n"
+					+ "  その方は犯人ではありませんね。\r\n"
+					+ " ");
+		}
 	}
-
 }

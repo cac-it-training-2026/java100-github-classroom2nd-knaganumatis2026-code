@@ -70,22 +70,54 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Explorer {
-
 	public static void main(String[] args) throws IOException {
 
 		System.out.println("隊長：");
 		System.out.println("ワニ3匹発見！\n");
 		System.out.println("グーワニかチョキワニかパーワニのどれかです。\n");
 
-		int alligator = 0;
-		int hand = 0;
 		int i = 0;
+
+		int alligator = (int) (Math.random() * 10 % 3) + 1;
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-
 		//ここにwhile文、if文を利用した処理を記述
+		while (i < 3) {
+			i++;
+			System.out.println(" 隊長：\r\n"
+					+ " *  どの手を出して通り抜けますか\r\n"
+					+ " *  （グー… 1 : チョキ… 2 : パー… 3）＞");
+			String handStr = br.readLine();
+			int hand = Integer.parseInt(handStr);
 
+			if (alligator == 1) {
+				System.out.println("相手はグーワニでした。");
+				if (hand == 2) {
+					System.out.println("you lose");
+					break;
+				} else {
+					System.out.println(i + "you win");
+				}
+			} else if (alligator == 2) {
+				System.out.println("相手はチョキワニでした。");
+				if (hand == 3) {
+					System.out.println("you lose");
+					break;
+				} else {
+					System.out.println(i + "you win");
+				}
+			} else {
+				System.out.println("相手はパーワニでした。");
+				if (hand == 1) {
+					System.out.println("you lose");
+					break;
+				} else {
+					System.out.println(i + "you win");
+				}
+			}
+
+		}
 
 		if (i == 3) {
 			System.out.println("隊長：");
